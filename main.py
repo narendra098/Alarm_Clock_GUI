@@ -5,8 +5,8 @@ import time
 from playsound import playsound
 
 parent = Tk()
-current_time = datetime.datetime.now()
-now = current_time.strftime("%H:%M:%S")
+current_time = datetime.datetime.now() #current time with date
+now = current_time.strftime("%H:%M:%S") #current time in HH:MM:SS format
 
 # function to speak
 def speak():

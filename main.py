@@ -6,7 +6,7 @@ from playsound import playsound
 
 parent = Tk()
 
-# function to speak your name
+# function to speak
 def speak():
     speak = "Hello " + e1.get() + " it's time to wake up"
     engine = pyttsx3.init()

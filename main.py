@@ -5,24 +5,35 @@ import time
 from playsound import playsound
 
 parent = Tk()
+current_time = datetime.datetime.now()
+now = current_time.strftime("%H:%M:%S")
 
 # function to speak
 def speak():
-    speak = "Hello " + e1.get() + " it's time to wake up"
     engine = pyttsx3.init()
     volume = engine.getProperty('volume')
     engine.setProperty('volume', 1.0)
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
-    engine.say(speak)
-    engine.runAndWait()
+    if int(now[:2])>1 and int(now[:2])<=12:
+        speak = 'Good Morning '+e1.get()+' its time to wake up'
+        engine.say(speak)
+        engine.runAndWait()
+    elif int(now[:2])>12 and int(now[:2])<16:
+        speak = 'Good Afternoon ' + e1.get() + ' its time to wake up'
+        engine.say(speak)
+        engine.runAndWait()
+    else:
+        speak = 'Good Evening ' + e1.get() + ' its time to wake up'
+        engine.say(speak)
+        engine.runAndWait()
 
 #funtion to play alarm sound
 def play():
     while True:
-        time.sleep(1)
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
+        time.sleep(1)
         print(now)
         set_hour = e2.get()
         set_min = e3.get()

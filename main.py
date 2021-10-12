@@ -40,7 +40,7 @@ e1.grid(row=0, column=1)
 hour = Label(parent, text="SET HOUR").grid(row=1, column=0)  #label of set hour
 e2 = Entry(parent)   #entry box to enter hour
 e2.grid(row=1, column=1)
-min = Label(parent, text="SET MIN").grid(row=2, column=0)  #label of set hour
+min = Label(parent, text="SET MIN").grid(row=2, column=0)  #label of set minutes
 e3 = Entry(parent)   #entry box to enter hour
 e3.grid(row=2, column=1)
 submit = Button(parent, text="SET ALARM", command=play).grid(row=4, column=1) #button to set alarm
